@@ -17,3 +17,4 @@ https://pyslackers.com/web
 
 + If you are running VS Code and installing packages via pip - make sure you run VS Code as an admin! If you don't, things don't install correctly!
 
++ If a folder has a file called __init__.py within it, this means this folder is a package
