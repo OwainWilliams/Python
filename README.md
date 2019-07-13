@@ -13,5 +13,7 @@ https://www.amazon.co.uk/Python-Crash-Course-Eric-Matthes-ebook/dp/B07J4521M3
 Python Slack channel  
 https://pyslackers.com/web
 
+## Things to keep in mind
 
++ If you are running VS Code and installing packages via pip - make sure you run VS Code as an admin! If you don't, things don't install correctly!
 
