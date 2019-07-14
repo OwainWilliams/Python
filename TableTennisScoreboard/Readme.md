@@ -8,5 +8,9 @@ This is my first Python program so I welcome any comments on how to do things be
 + Handle 2 players playing up to 11 points
 + Handle a tie break 
 + Inform players when to change service
-+ Create a leader - players name, number of wins. 
++ Create a leaderboard - players name, number of wins. Hook in to database 
 + Show over all result, best of 3 games. 
+
+## Possible frontend things
++ Maybe need to learn SignalR to make realtime score updates? 
++ Possibly use Django
