@@ -10,18 +10,18 @@ def main():
     playerone = Player(0)
     playertwo = Player(0)
 
-    startsinglesgame(playerone, playertwo)
+    startSinglesGame(playerone, playertwo)
 
 
-def startsinglesgame(playerone, playertwo):
+def startSinglesGame(playerone, playertwo):
     while True:
         if playerone.score < 11 and playertwo.score < 11:
             if playerone.score == 10 and playertwo.score == 10:
-                tiebreak()
+                tieBreak()
             else:
                 prompt = input('Press 1 when Player 1 scores, Press 2 when Player 2 scores :')
                 if prompt == '1' or prompt == '2':
-                    playerscores(prompt, playerone, playertwo)
+                    playerScores(prompt, playerone, playertwo)
                 else:
                     break
         else:
@@ -33,7 +33,7 @@ def startsinglesgame(playerone, playertwo):
                 break
             
 
-def playerscores(whoscored, playerone, playertwo):
+def playerScores(whoscored, playerone, playertwo):
     global pointsPlayed
     if whoscored == '1':
         playerone.score += 1
@@ -48,7 +48,7 @@ def playerscores(whoscored, playerone, playertwo):
         print('Change service')
 
 
-def tiebreak():
+def tieBreak():
     print('Tie break!')
     temp = 0
 
