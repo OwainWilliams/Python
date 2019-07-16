@@ -1,25 +1,31 @@
 
+class Player:
+    def __init__(self, score):
+        self.score = score
+
+
+
 def main():
     print('Welcome to Table Tennis Scoreboard V1.0')
-    startSinglesGame()
+    playerone = Player(0)
+    playertwo = Player(0)
+
+    startsinglesgame(playerone, playertwo)
 
 
-def startSinglesGame():
-    global playerOneScore
-    global playerTwoScore
-   
+def startsinglesgame(playerone, playertwo):
     while True:
-        if playerOneScore < 11 and playerTwoScore < 11:
-            if playerOneScore == 10 and playerTwoScore == 10:
+        if playerone.score < 11 and playertwo.score < 11:
+            if playerone.score == 10 and playertwo.score == 10:
                 tiebreak()
             else:
                 prompt = input('Press 1 when Player 1 scores, Press 2 when Player 2 scores :')
                 if prompt == '1' or prompt == '2':
-                    playerScores(prompt)
+                    playerscores(prompt, playerone, playertwo)
                 else:
                     break
         else:
-            if playerOneScore == 11:
+            if playerone.score == 11:
                 print('Player One wins!')
                 break
             else:
@@ -27,18 +33,15 @@ def startSinglesGame():
                 break
             
 
-def playerScores(whoScored):
+def playerscores(whoscored, playerone, playertwo):
     global pointsPlayed
-    global playerOneScore
-    global playerTwoScore
-
-    if whoScored == '1':
-        playerOneScore += 1
-    elif whoScored == '2':
-        playerTwoScore += 1
+    if whoscored == '1':
+        playerone.score += 1
+    elif whoscored == '2':
+        playertwo.score += 1
     
     pointsPlayed += 1
-    print('The score is: '+ str(playerOneScore) + ' / ' + str(playerTwoScore))
+    print('The score is: '+ str(playerone.score) + ' / ' + str(playertwo.score))
     
     changeService = checkService(pointsPlayed)
     if changeService == 'change':
@@ -51,8 +54,6 @@ def tiebreak():
 
 
 def reset():
-    global playerOneScore
-    global playerTwoScore
     playerOneScore = 0
     playerTwoScore = 0
 
@@ -65,7 +66,5 @@ def checkService(pointsPlayed):
         return ()
 
 
-playerOneScore = 0
-playerTwoScore = 0
 pointsPlayed = 0
 main()
